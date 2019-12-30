@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './App.css';
+import './Header.css';
 
 
-const App = ({numItems, total}) => {
+const Header = ({numItems, total}) => {
 
     return (
         <header className="shop-header row">
@@ -17,8 +17,7 @@ const App = ({numItems, total}) => {
                 </div>
             </Link>
         </header>
-
     )
 };
 
-export default App;
+export default Header;

@@ -1,10 +1,10 @@
 import React from "react";
 import './Error.css';
 
-const Error = () => {
+const ErrorIndicator = () => {
     return (
         <div>Error</div>
     )
 };
 
-export default Error;
+export default ErrorIndicator;
