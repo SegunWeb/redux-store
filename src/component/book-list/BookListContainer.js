@@ -7,6 +7,8 @@ import Spiner from "../spiner/Spiner";
 import ErrorIndicator from '../error-indicator/ErrorIndicator';
 import BookList from "./BookList";
 
+import {bindActionCreators} from "redux";
+
 import './BookList.css'
 
 
@@ -34,10 +36,14 @@ const mapStateToProps = ({ bookList: {books, loading, error}}) => {
     return {books, loading, error}
 };
 const mapDispatchToProps = (dispatch, {bookstoreService}) => {
-    return {
-        fetchBooks: fetchBooks(bookstoreService, dispatch),
-        onAddedToCart: (id) => dispatch(bookAddedToCart(id))
-    }
+    // return {
+    //     fetchBooks: fetchBooks(bookstoreService, dispatch),
+    //     onAddedToCart: (id) => dispatch(bookAddedToCart(id))
+    // }
+    return bindActionCreators({
+        fetchBooks: fetchBooks(bookstoreService),
+        onAddedToCart: bookAddedToCart,
+    }, dispatch)
 };
 
 export default compose(
